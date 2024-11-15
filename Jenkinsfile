@@ -1,10 +1,11 @@
 pipeline {
     agent any
-    
+
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        DOCKER_IMAGE = 'benlevi/flask-todo-app'
+        DOCKER_IMAGE = 'benl89/todo_app'
         DOCKER_TAG = 'latest'
+        // Define DockerHub credentials properly
+        DOCKERHUB = credentials('dockerhub-credentials')
     }
 
     stages {
@@ -12,16 +13,13 @@ pipeline {
             steps {
                 // Clean workspace before cloning
                 cleanWs()
-                // Clone the repository
-                git branch: 'main',
-                    url: 'https://github.com/Ben-levi/Web-App-To-Do---Jenkins.git'
+                checkout scm
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    // Build the Docker image
+                node(env.NODE_NAME) {
                     bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
                 }
             }
@@ -29,17 +27,17 @@ pipeline {
 
         stage('Login to DockerHub') {
             steps {
-                script {
-                    // Login to DockerHub
-                    bat 'echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
+                node(env.NODE_NAME) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+                        bat "docker login -u %DOCKERHUB_USERNAME% -p %DOCKERHUB_PASSWORD%"
+                    }
                 }
             }
         }
 
         stage('Push to DockerHub') {
             steps {
-                script {
-                    // Push the image to DockerHub
+                node(env.NODE_NAME) {
                     bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
             }
@@ -47,20 +45,17 @@ pipeline {
 
         stage('Deploy with Docker Compose') {
             steps {
-                // Deploy using docker-compose
-                bat 'docker-compose up -d'
+                node(env.NODE_NAME) {
+                    bat 'docker-compose up -d'
+                }
             }
         }
     }
 
     post {
         always {
-            // Logout from DockerHub
-            bat 'docker logout'
-            
-            // Clean up images to save space
-            script {
-                bat "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG}"
+            node(env.NODE_NAME) {
+                bat 'docker logout'
             }
         }
     }
