@@ -7,19 +7,24 @@ pipeline {
     }
     
     stages {
-        stage('Debug Information') {
+        stage('Verify Files') {
             steps {
-                bat 'dir'  // List files to verify workspace contents
-                bat 'type Dockerfile'  // Display Dockerfile contents
+                // Debug step to verify files are present
+                bat '''
+                    echo "Workspace contents:"
+                    dir
+                    echo "Requirements.txt contents:"
+                    type requirements.txt
+                '''
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build image with explicit path
+                    // Ensure we're in the right directory
                     bat """
-                        cd %WORKSPACE%
+                        echo "Building Docker image..."
                         docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
                     """
                 }
@@ -42,10 +47,7 @@ pipeline {
 
         stage('Deploy with Docker Compose') {
             steps {
-                bat """
-                    cd %WORKSPACE%
-                    docker-compose up -d
-                """
+                bat 'docker-compose up -d'
             }
         }
     }
@@ -53,6 +55,8 @@ pipeline {
     post {
         always {
             bat 'docker logout'
+            // Clean up images
+            bat "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG} || exit 0"
         }
     }
 }
