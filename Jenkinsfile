@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = 'benlevi/flask-todo-app'
+        DOCKER_IMAGE = 'benl89/todo_app:tagname'
         DOCKER_TAG = 'latest'
     }
     
