@@ -19,6 +19,22 @@ pipeline {
             }
             
         }
+        parameters {
+        choice(
+            name: 'DB_TYPE',
+            choices: ['MySQL', 'PostgreSQL', 'SQLite'],
+            description: 'Choose the type of database to configure'
+        )
+    }
+    stages {
+        stage('Display DB Type') {
+            steps {
+                script {
+                    echo "Selected database type: ${params.DB_TYPE}"
+                }
+            }
+        }
+    }
 stage('Debug') {
     steps {
         bat 'echo %CD%'
