@@ -5,7 +5,15 @@ pipeline {
         DOCKER_IMAGE = 'benl89/todo_app'
         DOCKER_TAG = 'latest'
     }
-    
+
+    parameters {
+        string(
+            name: 'DB_HOST',
+            defaultValue: 'mysql',
+            description: 'Enter the database host address'
+        )
+    }
+
     stages {
         stage('Verify Files') {
             steps {
@@ -17,38 +25,31 @@ pipeline {
                     type requirements.txt
                 '''
             }
-            
         }
-        parameters {
-        choice(
-            name: 'DB_TYPE',
-            choices: ['MySQL', 'PostgreSQL', 'SQLite'],
-            description: 'Choose the type of database to configure'
-        )
-    }
-    stages {
-        stage('Display DB Type') {
+
+        stage('Display DB Host') {
             steps {
                 script {
-                    echo "Selected database type: ${params.DB_TYPE}"
+                    echo "Database host: ${params.DB_HOST}"
                 }
             }
         }
-    }
-stage('Debug') {
-    steps {
-        bat 'echo %CD%'
-        bat 'dir'
-        bat 'git status'
-    }
-}
+
+        stage('Debug') {
+            steps {
+                bat 'echo %CD%'
+                bat 'dir'
+                bat 'git status'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Ensure we're in the right directory
+                    // Build the Docker image with DB_HOST as a build argument
                     bat """
                         echo "Building Docker image..."
-                        docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                        docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} --build-arg DB_HOST=${params.DB_HOST} .
                     """
                 }
             }
@@ -70,7 +71,14 @@ stage('Debug') {
 
         stage('Deploy with Docker Compose') {
             steps {
-                bat 'docker-compose up -d'
+                script {
+                    // Pass DB_HOST as an environment variable to Docker Compose
+                    bat """
+                        echo "Deploying with Docker Compose..."
+                        set DB_HOST=${params.DB_HOST}
+                        docker-compose up -d
+                    """
+                }
             }
         }
     }
