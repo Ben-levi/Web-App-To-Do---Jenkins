@@ -21,9 +21,9 @@ pipeline {
         }
 stage('Debug') {
     steps {
-        sh 'pwd'
-        sh 'ls -la'
-        sh 'git status'
+        bat 'echo %CD%'
+        bat 'dir'
+        bat 'git status'
     }
 }
         stage('Build Docker Image') {
