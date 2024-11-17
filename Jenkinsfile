@@ -17,8 +17,15 @@ pipeline {
                     type requirements.txt
                 '''
             }
+            
         }
-
+stage('Debug') {
+    steps {
+        sh 'pwd'
+        sh 'ls -la'
+        sh 'git status'
+    }
+}
         stage('Build Docker Image') {
             steps {
                 script {
