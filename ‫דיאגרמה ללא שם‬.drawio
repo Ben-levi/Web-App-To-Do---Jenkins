@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.8.9">
+  <diagram name="‫עמוד-1‬" id="ZVveZ73wA_4Csp0h5fA9">
+    <mxGraphModel dx="880" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BnPmOHQwZEPeppiY2NT-1" target="8BnPmOHQwZEPeppiY2NT-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-1" value="flask web app&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Domains.svg;" parent="1" vertex="1">
+          <mxGeometry x="90" y="150" width="111.27" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BnPmOHQwZEPeppiY2NT-2" target="8BnPmOHQwZEPeppiY2NT-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-21" value="update image" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8BnPmOHQwZEPeppiY2NT-20" vertex="1" connectable="0">
+          <mxGeometry x="0.2447" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-2" value="github&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="201.27" y="50" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BnPmOHQwZEPeppiY2NT-6" target="8BnPmOHQwZEPeppiY2NT-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-18" value="update&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8BnPmOHQwZEPeppiY2NT-14" vertex="1" connectable="0">
+          <mxGeometry x="0.2783" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-6" value="add code to my app to gather metrics" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.code_file" parent="1" vertex="1">
+          <mxGeometry x="121.13" y="356.9" width="49" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BnPmOHQwZEPeppiY2NT-7" target="8BnPmOHQwZEPeppiY2NT-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-23" value="update yaml" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8BnPmOHQwZEPeppiY2NT-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.1679" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-7" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="1" vertex="1">
+          <mxGeometry x="330" y="199" width="50" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-8" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_gateway;" parent="1" vertex="1">
+          <mxGeometry x="480" y="260" width="69" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-10" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Grafana.svg;" parent="1" vertex="1">
+          <mxGeometry x="650" y="399.6" width="68" height="52.800000000000004" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-11" value="" style="image;html=1;image=img/lib/clip_art/finance/Graph_128x128.png" parent="1" vertex="1">
+          <mxGeometry x="718" y="386" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.539;entryY=-0.044;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="8BnPmOHQwZEPeppiY2NT-2" target="8BnPmOHQwZEPeppiY2NT-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-19" value="clone" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8BnPmOHQwZEPeppiY2NT-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.2111" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-27" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="386" width="190" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-28" value="my flask app &amp;amp; github" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="20" width="230" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-29" value="Service Monitor Yaml file&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=crd" parent="1" vertex="1">
+          <mxGeometry x="460" y="300" width="50" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-30" value="Prometheus &amp;amp; grafana UI" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="599.45" y="20" width="230" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="8BnPmOHQwZEPeppiY2NT-9" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.prometheus;" parent="8BnPmOHQwZEPeppiY2NT-30" vertex="1">
+          <mxGeometry x="130" y="50" width="68.55" height="68.55" as="geometry" />
+        </mxCell>
+        <mxCell id="lcjpHR0fB_7oWpo1_Iah-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8BnPmOHQwZEPeppiY2NT-9" target="8BnPmOHQwZEPeppiY2NT-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lcjpHR0fB_7oWpo1_Iah-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.007;entryY=0.554;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8BnPmOHQwZEPeppiY2NT-8" target="8BnPmOHQwZEPeppiY2NT-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
