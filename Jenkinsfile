@@ -16,17 +16,21 @@ pipeline {
 
     stages {
         stage('Verify Files') {
-            steps {
-                // Debug step to verify files are present
-                bat '''
-                    echo "Workspace contents:"
-                    dir
-                    echo "Requirements.txt contents:"
-                    type requirements.txt
-                '''
-            }
-        }
-
+    steps {
+        // Debug step to verify files are present
+        bat '''
+            echo "Workspace contents:"
+            dir
+            echo "Contents of requirements.txt (if present):"
+            if exist requirements.txt (
+                type requirements.txt
+            ) else (
+                echo "requirements.txt not found"
+                exit /b 1
+            )
+        '''
+    }
+}
         stage('Display DB Host') {
             steps {
                 script {
