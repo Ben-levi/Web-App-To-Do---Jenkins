@@ -15,6 +15,15 @@ pipeline {
     }
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'git_pass')]) {
+                    sh 'git clone https://github.com/your-username/your-repo.git'
+                }
+            }
+        }
+    }
+}
         stage('Verify Files') {
     steps {
         // Debug step to verify files are present
