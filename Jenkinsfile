@@ -2,6 +2,7 @@ pipeline {
     agent any
     
     environment {
+        KUBECONFIG = "C:\Users\USER\.kube"
         DOCKER_IMAGE = 'benl89/todo_app'
         DOCKER_TAG = 'latest'
     }
